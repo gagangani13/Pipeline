@@ -1,0 +1,56 @@
+.form_label{
+    font-size: 14px !important;
+    color: rgb(108 115 127 / 1) !important;
+    font-weight: 600 !important;
+    font-family: inherit !important;
+}
+input,select,.MuiOutlinedInput-root,.MuiTypography-root {
+    font-size: 16px !important;
+    font-family: inherit !important;
+    padding: 4px !important;
+}
+textarea:focus,.custom-textarea:focus {
+    outline-color: #1f88de !important
+    ;
+  }
+  .custom-textarea{
+    width: 100%;
+    resize: none;
+    padding: 4px !important;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #c4c4c4;
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto !important;
+    cursor: text;
+    white-space: 'pre-wrap';
+    line-height: 1.5 !important;
+    align-content: center;
+  }  
+  .custom-textarea:hover {
+    border: 1px solid rgb(33, 33,33)
+  }
+  .custom-textarea p {
+    margin: 0; /* Remove margin */
+    padding: 2px; /* Remove padding */
+    line-height: 1.5; /* Adjust line height if needed */
+  }
+  .variable {
+    border: 1px solid var(--c1);
+    padding: 2px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 0 5px var(--c2);
+    color: var(--c2);
+  }
+  .convert_icon{
+    width: min-content !important;
+    top: 0 !important;
+    position: absolute !important;
+    right: 0 !important;
+    margin-top: -6px !important;
+  }
+  .convert_icon svg{
+    font-size: 16px !important;
+  }
