@@ -18,8 +18,8 @@ import {
 } from "@mui/material";
 import "./FormComponent.css";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-import { useStore } from "../../store";
-import { handleCreate } from "../nodeAbstraction";
+import { useStore } from "../../../store/store";
+import { handleCreate } from "../../../lib/nodeAbstraction";
 import { getConnectedEdges, useReactFlow } from "reactflow";
 const FormComponent = ({ data, nodeId, setHandles,onInputHandle }) => {
   const [formData, setFormData] = useState({});

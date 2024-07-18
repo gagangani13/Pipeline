@@ -1,7 +1,7 @@
-import { DraggableNode } from "../nodes/draggableNode";
-import { nodes } from "../nodes/nodeCreation";
+import { DraggableNode} from '../Node/DraggableNode';
+import { nodes } from "../../lib/nodeCreation";
 
-export const PipelineToolbar = () => {
+export const ToolbarComponent = () => {
 
   return (
     <div className="toolbar">

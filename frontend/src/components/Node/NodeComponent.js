@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import {  useState } from "react";
 import { Handle, Position, getConnectedEdges, useReactFlow, useUpdateNodeInternals } from "reactflow";
-import "./nodes.css";
+import "../Node/NodeComponent.css";
 import {
   Close,
   ContentCopy,
@@ -18,7 +18,7 @@ import {
   HighlightOff,
   Settings,
 } from "@mui/icons-material";
-import { useStore } from "../store";
+import { useStore } from "../../store/store";
 import { shallow } from "zustand/shallow";
 import FormComponent from "./FormComponent/FormComponent";
 // import SlateEditor from "./slate-editor/slateEditor";

@@ -4,12 +4,12 @@
 
 import { useState, useRef, useCallback, useEffect, useMemo } from 'react';
 import ReactFlow, { Controls, Background, MiniMap, ReactFlowProvider } from 'reactflow';
-import { useStore } from '../store';
+import { useStore } from '../../store/store';
 import { shallow } from 'zustand/shallow';
 import 'reactflow/dist/style.css';
-import { NodeComponent } from '../nodes/NodeComponent';
-import { nodeTypeNames } from '../nodes/nodeCreation';
-import CustomEdge from './edges/customEdge';
+import { NodeComponent } from '../Node/NodeComponent'
+import { nodeTypeNames } from '../../lib/nodeCreation';
+import CustomEdge from '../../lib/customEdge';
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
 
@@ -24,7 +24,7 @@ const selector = (state) => ({
   onConnectHandle: state.onConnectHandle
 });
 
-export const PipelineUI = () => {
+export const PipelineComponent = () => {
 
   const nodeTypes = useMemo(() => {
     return nodeTypeNames.reduce((types, typeName) => {
@@ -74,7 +74,6 @@ export const PipelineUI = () => {
           if (event?.dataTransfer?.getData('application/reactflow')) {
             const appData = JSON.parse(event.dataTransfer.getData('application/reactflow'));
             const type = appData?.nodeType;
-            // const handle = appData?.handle;
       
             // check if the dropped element is valid
             if (typeof type === 'undefined' || !type) {

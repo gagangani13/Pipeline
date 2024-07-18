@@ -1,13 +1,13 @@
 // submit
 
 import { shallow } from 'zustand/shallow';
-import { useStore } from "./store";
-import toast from 'react-hot-toast';
+import { useStore } from '../../store/store';
 import { CircularProgress } from '@mui/material';
 import { green } from '@mui/material/colors';
 import { useState } from 'react';
+import { postData } from '../../service/api'
 
-export const SubmitButton = () => {
+export const SubmitComponent = () => {
   const [loading, setLoading] = useState(false);
     const selector = (state) => ({
         nodes: state.nodes,
@@ -22,22 +22,7 @@ export const SubmitButton = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    try {
-      const res = await fetch(process.env.REACT_APP_BACKEND, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nodes, edges })
-      });
-      const data = await res.json();
-      if (!data.response) {
-        throw new Error(data.detail)
-      }
-      toast.success(`Nodes: ${data.num_nodes}, Edges: ${data.num_edges}, DAG: ${data.is_dag}`);
-  
-    } catch (error) {
-        let msg=error.message||'Something went wrong';
-        toast.error(msg)
-    }
+    await postData('check_dag', { nodes, edges });
     setLoading(false);
   };
   return (

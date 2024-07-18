@@ -6,7 +6,7 @@ import {
   getSmoothStepPath,
 } from "reactflow";
 import {  HighlightOff } from "@mui/icons-material";
-import { useStore } from "../../store";
+import { useStore } from "../store/store";
 import { shallow } from "zustand/shallow";
 export default function CustomEdge({
   id,
