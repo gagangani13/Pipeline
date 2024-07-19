@@ -12,4 +12,4 @@ sqlparse
 typing_extensions
 tzdata
 virtualenv
-gunicor==20.1.0
+gunicorn==20.1.0
